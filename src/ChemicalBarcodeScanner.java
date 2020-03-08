@@ -4,7 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChemicalBarcodeScanner {
 
@@ -35,6 +37,22 @@ public class ChemicalBarcodeScanner {
 
         String input = "0859082003610";
         Barcode b = new Barcode(input);
-        b.printIngredients();
+        //b.printIngredients();
+        List<String> ingredients = b.getIngredients();
+        URL url = new URL(getLink(ingredients.get(5)));
+        System.out.println(url);
+//        for (String i : ingredients) {
+//            String link = getLink(i);
+//            System.out.println(link);
+//        }
+    }
+
+    public static String getLink(String name) {
+        String str[] = name.split("\\s");
+        String query = "";
+        for (String s : str) {
+            query = query + s + "_";
+        }
+        return "https://en.wikipedia.org/wiki/" + query;
     }
 }
