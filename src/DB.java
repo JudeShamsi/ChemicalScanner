@@ -23,10 +23,11 @@ public class DB {
        Statement stmt = null;
        String csvFilePathCarcinogen = "carcinogen_v1.csv";
        String carcinogenItem = null;
-        PreparedStatement statement2 = null;
+       PreparedStatement statement2 = null;
+       PreparedStatement statement1 = null;
        // Register JDBC driver
 
-
+        int count = 0;
 
        int batchSize = 20;
 
@@ -38,8 +39,6 @@ public class DB {
             conn.setAutoCommit(false);
             System.out.println("Connected database successfully...");
             stmt = conn.createStatement();
-            System.out.println("Connected database successfully...");
-
 
             System.out.println("Deleting table in given database...");
             stmt = conn.createStatement();
@@ -79,9 +78,6 @@ public class DB {
 
 //          b.printIngredients();
 
-            int count = 0;
-
-
             BufferedReader linereader = new BufferedReader(new FileReader(csvFilePathCarcinogen));
             String lineText = null;
 
@@ -94,7 +90,6 @@ public class DB {
                 String agent = data[1];
                 String info = data[2];
                 Integer classif = Integer.parseInt(data[3]);
-                //count += count + 1;
 
                carcinogenItem = "INSERT INTO carcinogens (id, agent, info, classification) VALUES (?,?,?,?)";
                statement2 = conn.prepareStatement((carcinogenItem));
@@ -132,13 +127,31 @@ public class DB {
             }
             rs.close();
 
+            int pk_val = 0;
 
-//            for(int i = 0; i < array.size()-1){
-//                String ingredientItem = "INSERT INTO ingredients " +
-//                        "VALUES ('s')";
-//                stmt.executeUpdate(ingredientItem);
-//            }
+            for(int i = 0; i < array.size()-1; i++){
+                String ingredientItem = "INSERT INTO ingredients (id, name) VALUES (?,?)";
+                statement1 = conn.prepareStatement((ingredientItem));
+                statement1.setInt(1, pk_val);
+                pk_val++;
+                statement1.setString(2, array.get(i));
+                statement1.addBatch();
+                if(count % batchSize == 0) {
+                    statement1.executeBatch();
+                }
+            }
+                statement1.executeBatch();
 
+            String ing_list = "SELECT id, name FROM ingredients";
+            ResultSet rs_ingredient = stmt.executeQuery(ing_list);
+            while(rs_ingredient.next()){
+                int id  = rs_ingredient.getInt("id");
+                String name = rs_ingredient.getString("name");
+
+                //Display values
+                System.out.print("ID: " + id + " Name: " + name);
+            }
+            rs_ingredient.close();
 
 
             System.out.println("successfully added items");
