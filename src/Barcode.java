@@ -2,11 +2,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.net.URL;
 
 public class Barcode {
     List<String> ingredients;
@@ -90,9 +89,9 @@ public class Barcode {
         String str[] = stringlist.split("\\s*,\\s*|\\s*\\(\\s*|\\s*\\),\\s*");
         //
         ingredients = Arrays.asList(str);
-        for (String s : ingredients) {
-            System.out.println(s);
-        }
+//        for (String s : ingredients) {
+//            System.out.println(s);
+//        }
     }
 
 

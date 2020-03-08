@@ -3,9 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
-//package net.codejava;
 
-import java.io.*;
+
 
 public class DB {
 
@@ -68,6 +67,7 @@ public class DB {
             stmt.executeUpdate(carcinogens);
 
             String input = "0859082003610";
+
             Barcode b = null;
             try {
                 b = new Barcode(input);
