@@ -154,14 +154,16 @@ public class DB {
             }
             rs_ingredient.close();
 
-            String joined_list = "SELECT * FROM ingredients INNER JOIN carcinogens USING (name)";
+            String joined_list = "SELECT * FROM carcinogens B INNER JOIN ingredients A ON B.name = A.name";
             ResultSet rs_join = stmt.executeQuery(joined_list);
             while(rs_join.next()){
                 int id  = rs_join.getInt("id");
                 String name = rs_join.getString("name");
+                String info = rs_join.getString("info");
+                int classification = rs_join.getInt("classification");
 
                 //Display values
-                System.out.print("Joined Items: ID: " + id + " Name: " + name);
+                System.out.print("Joined Items: ID: " + id + " Name: " + name + " Info: " + info + " Classification: " + classification);
                 System.out.println(" ");
             }
             rs_join.close();
