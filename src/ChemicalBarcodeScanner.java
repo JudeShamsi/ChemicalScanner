@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ChemicalBarcodeScanner {
 
-
+// INSERT BARCODE IN input STRING
     public static void main(String[] args) throws MalformedURLException, IOException {
 
 //        Action action = new AbstractAction() {
@@ -27,17 +27,14 @@ public class ChemicalBarcodeScanner {
         // FOR LOCAL TESTING PURPOSES
 //        String input = "0850004207024";
 
-       // ArrayList<ArrayList<String>> lists = new ArrayList<>();
 //        String input = "0737628003006";
 //        Barcode b = new Barcode(input);
-//        lists.add(b.getIngredients());
 
 //        input = "0017082876317";
 //        b = new Barcode(input);
-//        lists.add(b.getIngredients());
 
-        String input = "017082876317";
+        String input = "0859082003610";
         Barcode b = new Barcode(input);
-        //lists.add(b.getIngredients());
+        b.printIngredients();
     }
 }

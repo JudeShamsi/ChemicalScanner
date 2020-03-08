@@ -29,3 +29,31 @@
         }
 
     }
+
+
+    //    private void parse() {
+    //        String temp = "";
+    //        for (int i = 0; i<stringlist.length(); i++) {
+    //            char x = stringlist.charAt(i);
+    //            if (x == '[') {
+    //                seenSquare = true;
+    //            } else if (x == '(') {
+    //                seenParenthesis = true;
+    //            } else if (x == ']') {
+    //                seenSquare = false;
+    //            } else if (x == ')') {
+    //                seenParenthesis = false;
+    //            } else if ((x == ',') && (seenParenthesis || seenSquare)) {
+    //                temp = temp + x;
+    //            } else if (x != ',') {
+    //                temp = temp + x;
+    //            } else {
+    //                System.out.println(temp);
+    //                ingredients.add(temp);
+    //                temp = "";
+    //                if (i != stringlist.length() - 1) {
+    //                    i++;
+    //                }
+    //            }
+    //        }
+    //    }
