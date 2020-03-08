@@ -1,0 +1,34 @@
+Id,Agent,Info,Classification
+0,Processed meat,consumption of,1
+1,Acetaldehyde associated with consumption of alcoholic beverages,na,1
+2,Red meat,consumption of,2
+3,Sodium chlorite,na,4
+4,Phenolphthalein,na,3
+5,Estrogen therapy postmenopausal,na,1
+6,Estrogen-progestogen menopausal therapy,combined,1
+7,Estrogen-progestogen oral contraceptives,combined,1
+8,Salted fish,Chinese-style,1
+9,Nitrate or nitrite,ingested under conditions that result in endogenous nitrosation,2
+10,Aristolochic acid,na,1
+11,Aristolochic acid plants containing,na,1
+12,Azathioprine,na,1
+13,Benzo[a]pyrene,na,1
+14,1-Nitropyrene,na,2
+15,23478-Pentachlorodibenzofuran,na,1
+16,3453’4’-Pentachlorobiphenyl ,PCB-126,1
+17,Methylazoxymethanol acetate,na,3
+18,Ethanol in alcoholic beverages,,1
+19,Frying emissions from high-temperature,,2
+20,Mate,very hot,0
+21,Mate,not very hot,4
+22,Very hot beverages at above 65 °C,drinking,2
+23,Glycidol,na,2
+24,Butylated hydroxyanisole,BHA,3
+25,Butylated hydroxytoluene,BHT,4
+26,Coconut oil diethanolamine condensate,na,3
+27,Carrageenan degraded,Poligeenan,3
+28,Carrageenan native,na,4
+29,fd&c blue no 1,na,5
+30,titanium dioxide,na,5
+31,fd&c red no 40,na,5
+32,fd&c yellow n06,na,5

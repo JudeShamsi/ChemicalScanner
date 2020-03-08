@@ -5,11 +5,12 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChemicalBarcodeScanner {
 
 // INSERT BARCODE IN input STRING
-    public static void main(String[] args) throws MalformedURLException, IOException {
+//    public static void main(String[] args) throws MalformedURLException, IOException {
 
 //        Action action = new AbstractAction() {
 //            @Override
@@ -33,8 +34,9 @@ public class ChemicalBarcodeScanner {
 //        input = "0017082876317";
 //        b = new Barcode(input);
 
-        String input = "0859082003610";
-        Barcode b = new Barcode(input);
-        b.printIngredients();
-    }
+//        String input = "0859082003610";
+//        Barcode b = new Barcode(input);
+//        List<String> array = b.getIngredients();
+//        b.printIngredients();
+//    }
 }
