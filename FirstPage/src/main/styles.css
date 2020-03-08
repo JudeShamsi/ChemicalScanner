@@ -1,6 +1,6 @@
         h2{
-        color: #585858;
-        font-size: 50px;
+        color: #ff673d;
+        font-size: 70px;
         margin: 45px;
         text-align: center;
         font-family: "Helvetica Neue";
@@ -14,7 +14,10 @@
         font-family: Times;
         }
        body {
-        background-image: url('https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/p720x720/88228463_2809104092514573_6708160611890495488_o.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=2TjiVVnPoIcAX-E-9LO&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=467061dbdfbf5920ce9ecc1e93e56773&oe=5E984880');
+        background-image: url('https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/88240519_2809440279147621_4902953460443381760_o.jpg?_nc_cat=100&_nc_sid=8024bb&_nc_ohc=09leaq5JLGAAX-g1UD-&_nc_ht=scontent-sea1-1.xx&oh=5cd6ce7c2ca211dbc13a38ec03126225&oe=5E95D17E');
         background-color: #cccccc;
+         background-position: center;
+         background-repeat: repeat;
+         background-size: cover;
+         height: 70%;
        }
-
