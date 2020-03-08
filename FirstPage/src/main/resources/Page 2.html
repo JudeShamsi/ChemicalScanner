@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.2.css">
+</head>
+
+
+<h2>Behold, YOUR RESULTS </h2>
+
+<h3>Carcinogens in your PRODUCT! ill be listed below </h3>
+
+<body2>
+    <h1a> Group 1: Carcinogenic to humans</h1a>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+</body2>
+
+<body1>
+<center>
+<button class="accordion">Group 1: Carcinogenic to humans</button>
+<div class="panel">
+    <dl>
+    <dt>Hummus</dt>
+    <dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
+    <dt>Pita</dt>
+    <dd>A soft, slightly leavened flatbread.</dd>
+    <dt>Halloumi</dt>
+    <dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
+    <dt>Green salad</dt>
+    <dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
+    </dl>
+</div>
+</body1>
+</center>
+
+
+
+<center>
+<button class="accordion">Group 2A:Probably carcinogenic to humans</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</center>
+
+<center>
+<button class="accordion">Group 2B: Possibly carcinogenic to humans </button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+    <center>
+
+        <center>
+<button class="accordion">Group 3: Not classifiable as to its carcinogenicity to humans</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+            <center>
+
+                <center>
+<button class="accordion">Group 4: You're good, fam.</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+                    <center>
+                        </body1>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
