@@ -1,0 +1,23 @@
+        h2{
+        color: #ff673d;
+        font-size: 70px;
+        margin: 45px;
+        text-align: center;
+        font-family: "Helvetica Neue";
+        }
+
+        p{
+        color: #6799a3;
+        font-size: 25px;
+        margin: 24px;
+        text-align: center;
+        font-family: Times;
+        }
+       body {
+        background-image: url('https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/88240519_2809440279147621_4902953460443381760_o.jpg?_nc_cat=100&_nc_sid=8024bb&_nc_ohc=09leaq5JLGAAX-g1UD-&_nc_ht=scontent-sea1-1.xx&oh=5cd6ce7c2ca211dbc13a38ec03126225&oe=5E95D17E');
+        background-color: #cccccc;
+         background-position: center;
+         background-repeat: repeat;
+         background-size: cover;
+         height: 70%;
+       }
