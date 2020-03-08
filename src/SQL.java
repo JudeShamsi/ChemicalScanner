@@ -2,28 +2,7 @@ import java.sql.*;
 
 public class SQL {
 
-    void createTable(String table_name){
-        Statement stmt = null;
-        Connection conn = null;
 
-        try {
-            stmt = conn.createStatement();
-
-            String ingredients = "CREATE TABLE INGREDIENTS" +
-                    "(id INTEGER not NULL, " +
-                    " name VARCHAR(255), " +
-                    " PRIMARY KEY ( id ))";
-
-
-
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 }
 
 //  CREATE TABLE //

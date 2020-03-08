@@ -1,4 +1,4 @@
-Id,Agent,Info,Classification
+Id,Name,Info,Classification
 0,Processed meat,consumption of,1
 1,Acetaldehyde associated with consumption of alcoholic beverages,na,1
 2,Red meat,consumption of,2
@@ -28,7 +28,7 @@ Id,Agent,Info,Classification
 26,Coconut oil diethanolamine condensate,na,3
 27,Carrageenan degraded,Poligeenan,3
 28,Carrageenan native,na,4
-29,fd&c blue no 1,na,5
-30,titanium dioxide,na,5
-31,fd&c red no 40,na,5
-32,fd&c yellow n06,na,5
+29,fd&c blue no 1,na,4
+30,titanium dioxide,na,4
+31,fd&c red no 40,na,4
+32,fd&c yellow n06,na,4

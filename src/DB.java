@@ -58,7 +58,7 @@ public class DB {
 
             String carcinogens = "CREATE TABLE CARCINOGENS" +
                     "(id INTEGER NOT NULL, " +
-                    " agent VARCHAR(255), " +
+                    " name VARCHAR(255), " +
                     " info VARCHAR(255), " +
                     " classification INTEGER not NULL, " +
                     " PRIMARY KEY ( id ))";
@@ -87,15 +87,15 @@ public class DB {
             while((lineText = linereader.readLine()) != null) {
                 String[] data = lineText.split(",");
                 Integer id = Integer.parseInt(data[0]);
-                String agent = data[1];
+                String name = data[1];
                 String info = data[2];
                 Integer classif = Integer.parseInt(data[3]);
 
-               carcinogenItem = "INSERT INTO carcinogens (id, agent, info, classification) VALUES (?,?,?,?)";
+               carcinogenItem = "INSERT INTO carcinogens (id, name, info, classification) VALUES (?,?,?,?)";
                statement2 = conn.prepareStatement((carcinogenItem));
 
                 statement2.setInt(1, id);
-                statement2.setString(2, agent);
+                statement2.setString(2, name);
                 statement2.setString(3, info);
                 statement2.setInt(4, classif);
 
@@ -111,17 +111,17 @@ public class DB {
 
             statement2.executeBatch();
 
-            String sql = "SELECT id, agent, info, classification FROM carcinogens";
+            String sql = "SELECT id, name, info, classification FROM carcinogens";
             ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()){
                 int id  = rs.getInt("id");
                 int classification = rs.getInt("classification");
-                String agent = rs.getString("agent");
+                String name = rs.getString("name");
                 String info = rs.getString("info");
 
                 //Display values
                 System.out.print("ID: " + id);
-                System.out.print(", Agent: " + agent);
+                System.out.print(", Name: " + name);
                 System.out.print(", Info: " + info);
                 System.out.println(", Classification: " + classification);
             }
@@ -150,8 +150,21 @@ public class DB {
 
                 //Display values
                 System.out.print("ID: " + id + " Name: " + name);
+                System.out.println(" ");
             }
             rs_ingredient.close();
+
+            String joined_list = "SELECT * FROM ingredients INNER JOIN carcinogens USING (name)";
+            ResultSet rs_join = stmt.executeQuery(joined_list);
+            while(rs_join.next()){
+                int id  = rs_join.getInt("id");
+                String name = rs_join.getString("name");
+
+                //Display values
+                System.out.print("Joined Items: ID: " + id + " Name: " + name);
+                System.out.println(" ");
+            }
+            rs_join.close();
 
 
             System.out.println("successfully added items");
@@ -164,6 +177,8 @@ public class DB {
     }
 
 }
+
+
 
 // DROPPING A TABLE
 
