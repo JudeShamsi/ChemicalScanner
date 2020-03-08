@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3ee7268-033f-4a64-b3b6-29affc7fb51b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FirstPage.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Page 2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/searchbar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ChemicalSearchbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ChemicalSearchbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/styles.css" afterDir="false" />
@@ -22,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
         <option value="XSLT Stylesheet" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -59,9 +59,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583683701481">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1583683701481" />
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1583655697874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1583655697874" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583679245364">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1583679245364" />
   </component>
 </project>
