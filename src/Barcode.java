@@ -9,17 +9,16 @@ import java.util.List;
 import java.net.URL;
 
 public class Barcode {
+    List<String> in;
+    List<String> additives;
     List<String> ingredients;
     static String barcode;
     private StringBuilder response;
-    private String stringlist;
-    private boolean seenParenthesis;
-    private boolean seenSquare;
+    private String stringlisti;
+    private String stringlista;
 
     public Barcode(String barcode) throws IOException {
-        ingredients = new ArrayList<>();
-        seenParenthesis = false;
-        seenSquare = false;
+        in = new ArrayList<>();
         this.barcode = barcode;
         try {
             sendGET();
@@ -32,11 +31,38 @@ public class Barcode {
                 System.out.println("Invalid barcode: please try a different barcode");
             }
         }
-        organise();
-        parse();
+        organiseIngredients();
+        organiseAdditives();
+        parseIngredients();
+        parseAdditives();
+        int capacity = in.size() + additives.size();
+        ingredients = new ArrayList<>(capacity);
+
+        for (int i = 0; i<in.size() -1; i++) {
+            String s = in.get(i);
+            ingredients.add(s);
+        }
+        for (int i = 0; i<additives.size() - 1; i++) {
+            String s = additives.get(i);
+            ingredients.add(s);
+        }
     }
 
-    private void organise() {
+    private void organiseAdditives() {
+        String s = response.toString();
+        int startindex = s.indexOf("additives_original_tags");
+
+        // first index of ingredient string
+        startindex = startindex + 26;
+
+        // index of the next " after start index to indicate end of ingredient string
+        int endindex = s.indexOf("]", startindex);
+        String inglong = s.substring(startindex, endindex);
+
+        stringlista = inglong;
+    }
+
+    private void organiseIngredients() {
         String s = response.toString();
         int startindex = s.indexOf("ingredients_text_en");
 
@@ -57,7 +83,7 @@ public class Barcode {
         }
         // all lower case
         inglong = inglong.toLowerCase();
-        stringlist = inglong;
+        stringlisti = inglong;
     }
 
 
@@ -77,7 +103,7 @@ public class Barcode {
                 response.append(inputLine+"\n");
             }
             in.close();
-            //System.out.println(response.toString());
+//            System.out.println(response.toString());
 
         } else {
             System.out.println("GET request not worked");
@@ -86,12 +112,17 @@ public class Barcode {
     }
 
 
-    private void parse() {
-        String str[] = stringlist.split("\\s*,\\s*|\\s*\\(\\s*|\\s*\\),\\s*");
+    private void parseIngredients() {
+        String str[] = stringlisti.split("\\s*,\\s*|\\s*\\(\\s*|\\s*\\),\\s*");
         //
-        ingredients = Arrays.asList(str);
-        for (String s : ingredients) {
-            System.out.println(s);
+        in = Arrays.asList(str);
+    }
+
+    private void parseAdditives() {
+        String str[] = stringlista.split("\\s*,\\s*");
+        additives = Arrays.asList(str);
+        for (int i = 0; i < additives.size() -1; i++) {
+            additives.set(i, additives.get(i).substring(4,8));
         }
     }
 
@@ -101,7 +132,7 @@ public class Barcode {
     }
 
     public void printIngredients() {
-        for (String s: ingredients) {
+        for (String s : in) {
             System.out.println(s);
         }
     }
