@@ -10,6 +10,9 @@ Languages and Applications used:
 - Java
 - JDBC
 - PostgreSQL Heroku Database
+- HTML, CSS
+
+
 
 
 
