@@ -49,7 +49,7 @@ public class DB {
 
             stmt.executeUpdate(sql1);
             stmt.executeUpdate(sql2);
-            System.out.println("Table deleted in given database");
+            //System.out.println("Table deleted in given database");
 
             String ingredients = "CREATE TABLE INGREDIENTS" +
                     "(id INTEGER NOT NULL, " +
@@ -77,7 +77,11 @@ public class DB {
                 e.printStackTrace();
             }
 
+            System.out.println("Parsing Ingredient List...");
+
+
             List<String> array = b.getIngredients();
+
 
 //          b.printIngredients();
 
@@ -116,6 +120,7 @@ public class DB {
 
             String sql = "SELECT id, name, info, classification FROM carcinogens";
             ResultSet rs = stmt.executeQuery(sql);
+            //System.out.println("Inserting Carcinogens into Database...");
             while(rs.next()){
                 int id  = rs.getInt("id");
                 int classification = rs.getInt("classification");
@@ -123,10 +128,11 @@ public class DB {
                 String info = rs.getString("info");
 
                 //Display values
-                System.out.print("ID: " + id);
-                System.out.print(", Name: " + name);
-                System.out.print(", Info: " + info);
-                System.out.println(", Classification: " + classification);
+
+//                System.out.print("ID: " + id);
+//                System.out.print(", Name: " + name);
+//                System.out.print(", Info: " + info);
+//                System.out.println(", Classification: " + classification);
             }
             rs.close();
 
@@ -147,6 +153,7 @@ public class DB {
 
             String ing_list = "SELECT id, name FROM ingredients";
             ResultSet rs_ingredient = stmt.executeQuery(ing_list);
+            //System.out.println("Inserting Ingredient List into Database...");
             while(rs_ingredient.next()){
                 int id  = rs_ingredient.getInt("id");
                 String name = rs_ingredient.getString("name");
@@ -157,8 +164,12 @@ public class DB {
             }
             rs_ingredient.close();
 
+            System.out.println("Searching for Carcinogens in Ingredient List...");
+
             String joined_list = "SELECT * FROM carcinogens B INNER JOIN ingredients A ON B.name = A.name";
             ResultSet rs_join = stmt.executeQuery(joined_list);
+            System.out.println("Ingredients from Input Considered as a Carcinogen:");
+
             while(rs_join.next()){
                 int id  = rs_join.getInt("id");
                 String name = rs_join.getString("name");
@@ -166,7 +177,7 @@ public class DB {
                 int classification = rs_join.getInt("classification");
 
                 //Display values
-                System.out.print("Joined Items: ID: " + id + " Name: " + name + " Info: " + info + " Classification: " + classification);
+                System.out.print("ID: " + id + " Name: " + name + " Info: " + info + " Classification: " + classification);
                 System.out.println(" ");
             }
             rs_join.close();
