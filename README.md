@@ -12,8 +12,7 @@ Languages and Applications used:
 - PostgreSQL Heroku Database
 - HTML, CSS
 
-
-
+Problems encountered: Trouble making backend connect to frontend (learning experience... don't use Java to create web applications... :D )
 
 
 
