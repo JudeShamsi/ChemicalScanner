@@ -1,16 +1,12 @@
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChemicalBarcodeScanner {
+    public static List<String> ingredientNames;
+    public static List<Ingredient> ingredients;
 
 // INSERT BARCODE IN input STRING
-//    public static void main(String[] args) throws MalformedURLException, IOException {
+    public static void main(String[] args) throws IOException {
 
 //        Action action = new AbstractAction() {
 //            @Override
@@ -26,17 +22,10 @@ public class ChemicalBarcodeScanner {
 //        };
 
         // FOR LOCAL TESTING PURPOSES
-//        String input = "0850004207024";
 
-//        String input = "0737628003006";
-//        Barcode b = new Barcode(input);
+        String input = "0859082003610";
+        Barcode b = new Barcode(input);
+        ingredientNames = b.getIngredients();
+    }
 
-//        input = "0017082876317";
-//        b = new Barcode(input);
-
-//        String input = "0859082003610";
-//        Barcode b = new Barcode(input);
-//        List<String> array = b.getIngredients();
-//        b.printIngredients();
-//    }
 }

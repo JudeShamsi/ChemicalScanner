@@ -24,6 +24,7 @@ public class DB {
        String carcinogenItem = null;
        PreparedStatement statement2 = null;
        PreparedStatement statement1 = null;
+
        // Register JDBC driver
 
         int count = 0;
@@ -31,7 +32,7 @@ public class DB {
        int batchSize = 20;
 
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName(JDBC_DRIVER);
 
             System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -39,7 +40,7 @@ public class DB {
             System.out.println("Connected database successfully...");
             stmt = conn.createStatement();
 
-            System.out.println("Deleting table in given database...");
+            //System.out.println("Deleting table in given database...");
             stmt = conn.createStatement();
 
             String sql1 = "DROP TABLE ingredients ";
@@ -66,6 +67,7 @@ public class DB {
             stmt.executeUpdate(ingredients);
             stmt.executeUpdate(carcinogens);
 
+            //example barcode
             String input = "0859082003610";
 
             Barcode b = null;
@@ -74,6 +76,7 @@ public class DB {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             List<String> array = b.getIngredients();
 
 //          b.printIngredients();
@@ -149,8 +152,8 @@ public class DB {
                 String name = rs_ingredient.getString("name");
 
                 //Display values
-                System.out.print("ID: " + id + " Name: " + name);
-                System.out.println(" ");
+//                System.out.print("ID: " + id + " Name: " + name);
+//                System.out.println(" ");
             }
             rs_ingredient.close();
 
