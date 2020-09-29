@@ -18,7 +18,7 @@ src -> DB.java -> run
 
 * currently using example barcode for testing purposes *
 
-Problems encountered: Trouble making backend connect to frontend (everyone knew Java so we began coding in Java and soon realized it is quite difficult to create a web application using Java/JDBC vs. PHP/Python-Flask...etc)
+Problems encountered: Trouble making backend connect to frontend (everyone knew Java so we began coding in Java and soon realized it is quite difficult to create a full-stack web application using Java). Some of the teammates had their very first coding experience with this project! Overall it was a great and fun learning experience for everyone. 
 
 
 
